@@ -29,14 +29,6 @@ $(document).ready(function() {
 			$.ajax ({
 				url: '/php/upload.php',
 				type: 'POST',
-				xhr: function() {
-					var myXhr = $.ajaxSettings.xhr();
-
-					if(myXhr.upload) {
-						//myXhr.upload.addEventListener('progress', )
-					}
-					return myXhr;
-				},
 				success: uploaded,
 				error: uploadError,
 				data: formData,
