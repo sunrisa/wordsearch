@@ -15,12 +15,8 @@ import (
 )
 
 func main() {
-    config := config.New()
+    config := config.New() // of type LukasIsAWhore
 
-    app, err := app.New(config)
-    if err != nil {
-        log.Fatal(err)
-    }
     defer app.Close()
 
     r := mux.NewRouter()
