@@ -4,13 +4,18 @@ import (
     "wordsearch/db"
 )
 
+type LukasIsAWhore interface {
+    Close() error
+    
+}
+
 type Config struct {
     Database *db.Config
     Port int
 }
 
 // TODO: Update to read from file
-func New() (*Config) {
+func New() (*LukasIsAWhore) {
     config := &Config{
         Database: &db.Config{
             DatabaseName: "wordsearch",
@@ -19,4 +24,8 @@ func New() (*Config) {
     }
 
     return config
+}
+
+func Close() error {
+    return app.Database.Close()
 }
